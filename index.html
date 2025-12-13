@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stan Nutrition - Premium Wellness Supplements</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://thumbs.dreamstime.com/b/nature-healthy-people-nutrition-logo-design-vector-icon-illustration-eco-life-concept-symbol-environment-medicine-relax-plant-169645154.jpg">
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .tab-card img {
+  width: 100%;
+  height: 220px; /* Fixed height for uniformity */
+  object-fit: cover; /* Yeh magic hai - image crop karega without distortion */
+  object-position: center; /* Important part center mein focus */
+  border-radius: 16px 16px 0 0; /* Top corners rounded */
+  transition: transform 0.4s;
+}
+
+.tab-card:hover img {
+  transform: scale(1.05); /* Nice zoom on hover */
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">Stan<span>Nutrition</span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#plans">Plans</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-btn" data-modal>Contact Us</button>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Premium Nutrition for a Stronger You</h1>
+        <p>Science-backed supplements crafted for fitness enthusiasts, vegans, and everyone chasing peak performance and wellness.</p>
+        <button class="btn-primary" data-modal>Get Started Today</button>
+      </div>
+      <div class="hero-image">
+        <img src="./img/tabs/palne5.jpg" alt="Healthy Food">
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans / Tabs -->
+  <section class="features" id="plans">
+    <div class="container">
+      <h2 class="section-title">Choose Your Perfect Plan</h2>
+      <div class="tabs">
+        <div class="tab-card active" data-tab="1">
+          <img src="img/tabs/plane1.jpg" alt="Fitness">
+          <div class="tab-info">
+            <h3>Fitness Plan</h3>
+            <p>High-protein formulas designed for muscle growth, energy, and recovery. Perfect for gym-goers.</p>
+          </div>
+        </div>
+        <div class="tab-card" data-tab="2">
+          <img src="img/tabs/plane2.jpg" alt="Premium">
+          <div class="tab-info">
+            <h3>Premium Plan</h3>
+            <p>Ultra-premium ingredients, advanced absorption. For serious athletes.</p>
+          </div>
+        </div>
+        <div class="tab-card" data-tab="3">
+          <img src="img/tabs/plane3.jpg" alt="Vegan">
+          <div class="tab-info">
+            <h3>Vegan Plan</h3>
+            <p>100% plant-based, clean organic nutrition. No compromises.</p>
+          </div>
+        </div>
+        <div class="tab-card" data-tab="4">
+          <img src="img/tabs/plane4.jpg" alt="Balanced">
+          <div class="tab-info">
+            <h3>Balanced Plan</h3>
+            <p>Perfectly balanced macros for sustainable health weight management.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Slider -->
+  <section class="products" id="products">
+    <div class="container">
+      <h2 class="section-title">Our Best-Selling Supplements</h2>
+      <div class="slider">
+        <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+        <div class="slides" id="slides">
+          <div class="slide"><img src="img/slider/hero.jpg" alt="Whey Protein"></div>
+          <div class="slide"><img src="img/slider/hero.jpg" alt="Vegan Protein"></div>
+          <div class="slide"><img src="img/slider/hero.jpg" alt="Pre-Workout"></div>
+          <div class="slide"><img src="img/slider/hero.jpg" alt="Multivitamin"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA with Timer -->
+  <section class="cta">
+    <div class="container">
+      <h2>Limited Time: 20% Off First Order!</h2>
+      <p style="font-size:1.3rem;">New customers only · Ends soon</p>
+      <div class="timer">
+        <div><span id="days">12</span><br>Days</div>
+        <div><span id="hours">20</span><br>Hours</div>
+        <div><span id="minutes">56</span><br>Minutes</div>
+        <div><span id="seconds">20</span><br>Seconds</div>
+      </div>
+      <button class="btn-primary" data-modal>Claim Offer Now</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+ <footer>
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <h3>Stan Nutrition</h3>
+      <p>Premium wellness supplements for a healthier, stronger you.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="index.html#plans">Plans</a>
+      <a href="index.html#products">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-conditions.html">Terms & Conditions</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact Info</h3>
+      <p><i class="fas fa-phone"></i> 1800 208 1789</p>
+      <p><i class="fas fa-envelope"></i> hello@stannutrition.com</p>
+      <p><i class="fas fa-globe"></i> stannutrition.com</p>
+    </div>
+  </div>
+
+  <div class="container" style="text-align:center; padding-top:2rem; border-top:1px solid #333;">
+    <p>© 2025 Stan Nutrition. All rights reserved.</p>
+  </div>
+</footer>
+
+  <!-- Modal (Simple) -->
+  <div class="modal" id="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:white; padding:2rem; border-radius:16px; max-width:90%; width:400px; position:relative;">
+      <span data-close style="position:absolute; top:10px; right:15px; font-size: size 2rem; cursor:pointer;">&times;</span>
+      <h3>We Will Contact You Soon!</h3>
+      <form style="margin-top:1.5rem;">
+        <input type="text" placeholder="Your Name" required style="width:100%; padding:1rem; margin-bottom:1rem; border:1px solid #ddd; border-radius:8px;">
+        <input type="tel" placeholder="Phone Number" required style="width:100%; padding:1rem; margin-bottom:1rem; border:1px solid #ddd; border-radius:8px;">
+        <button type="submit" style="width:100%; background:var(--primary); color:white; border:none; padding:1rem; border-radius:8px; font-size:1.1rem;">Send Request</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    // Modal
+    const modal = document.getElementById('modal');
+    const closeModal = document.querySelector('[data-close]');
+    document.querySelectorAll('[data-modal]').forEach(btn => {
+      btn.addEventListener('click', () => modal.style.display = 'flex');
+    });
+    closeModal.addEventListener('click', () => modal.style.display = 'none');
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+
+    // Simple slider
+    let currentSlide = 0;
+    const slides = document.getElementById('slides');
+    const totalSlides = slides.children.length;
+
+    document.querySelector('.next').addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    });
+
+    // Timer (demo)
+    setInterval(() => {
+      let seconds = parseInt(document.getElementById('seconds').textContent);
+      if (seconds === 0) {
+        // reset or fetch from server in real case
+      } else {
+        document.getElementById('seconds').textContent = String(seconds - 1).padStart(2, '0');
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

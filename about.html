@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Stan Nutrition</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://thumbs.dreamstime.com/b/nature-healthy-people-nutrition-logo-design-vector-icon-illustration-eco-life-concept-symbol-environment-medicine-relax-plant-169645154.jpg">
+
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #059669;
+      --dark: #111827;
+      --light: #f9fafb;
+      --gray: #6b7280;
+      --gray-light: #e5e7eb;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      line-height: 1.7;
+      background: var(--light);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navbar - Same as Home & Contact */
+    header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .logo span { color: var(--dark); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--primary); }
+
+    .nav-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .nav-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
+
+    /* About Hero */
+    .about-hero {
+      margin-top: 90px;
+      padding: 100px 0;
+      background: linear-gradient(135deg, #ecfdf5 0%, #dcfce7 100%);
+      text-align: center;
+    }
+
+    .about-hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .about-hero p {
+      font-size: 1.3rem;
+      color: var(--gray);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Main Content */
+    .about-content {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--dark);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 5rem;
+    }
+
+    .story-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--dark);
+    }
+
+    .story-text p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .story-img img {
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    /* Mission & Vision */
+    .mission-vision {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+      margin: 5rem 0;
+    }
+
+    .card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .card i {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Values */
+    .values {
+      background: white;
+      padding: 100px 0;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .value-item {
+      text-align: center;
+      padding: 2rem;
+      background: #f0fdf4;
+      border-radius: 16px;
+    }
+
+    .value-item i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .value-item h4 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer - Same as other pages */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 80px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h3 { margin-bottom: 1.5rem; color: var(--primary); }
+
+    .footer-col a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.8rem;
+      transition: 0.3s;
+    }
+
+    .footer-col a:hover { color: var(--primary); }
+
+    .social-links a {
+      font-size: 1.8rem;
+      margin-right: 1rem;
+      color: #ccc;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover { color: var(--primary); }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+        transition: 0.4s;
+      }
+
+      .nav-links.active { left: 0; }
+
+      .story-grid { grid-template-columns: 1fr; text-align: center; }
+
+      .about-hero h1 { font-size: 2.5rem; }
+    }
+  </style>
+head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">Stan<span>Nutrition</span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#plans">Plans</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-btn">Contact Us</button>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Hero -->
+  <section class="about-hero">
+    <div class="container">
+      <h1>About Stan Nutrition</h1>
+      <p>Delivering premium, science-backed nutrition supplements to help you become the healthiest and strongest version of yourself.</p>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="about-content">
+    <div class="container">
+      <h2 class="section-title">Our Story</h2>
+      <div class="story-grid">
+        <div class="story-text">
+          <h2>We Started With A Simple Mission</h2>
+          <p>Stan Nutrition was born in 2023 with one goal — to make high-quality, effective, and affordable nutrition accessible to everyone in India.</p>
+          <p>Founded by fitness enthusiasts and certified nutritionists, we noticed that most supplements available in the market were either overpriced imports or filled with cheap fillers. We decided to change that.</p>
+          <p>Today, thousands of customers across India trust Stan Nutrition for their daily protein, vitamins, pre-workouts, and wellness needs because we never compromise on quality.</p>
+          <p><strong>We test every batch in FSSAI & ISO-certified labs and only use premium ingredients sourced globally.</strong></p>
+        </div>
+        <div class="story-img">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800" alt="Team Stan Nutrition">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="mission-vision">
+    <div class="container">
+      <div class="card">
+        <i class="fas fa-heartbeat"></i>
+        <h3>Our Mission</h3>
+        <p>To empower every Indian to live a healthier, stronger, and more energetic life through clean, transparent, and effective nutrition.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-award"></i>
+        <h3>Our Vision</h3>
+        <p>To become India's most trusted and loved nutrition brand by 2030 with 100% customer satisfaction.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="values">
+    <div class="container">
+      <h2 class="section-title">Our Core Values</h2>
+      <div class="values-grid">
+        <div class="value-item">
+          <i class="fas fa-leaf"></i>
+          <h4>100% Clean</h4>
+          <p>No artificial colors, fillers, or banned substances</p>
+        </div>
+        <div class="value-item">
+          <i class="fas fa-vial"></i>
+          <h4>Lab Tested</h4>
+          <p>Every batch tested in FSSAI-approved labs</p>
+        </div>
+        <div class="value-item">
+          <i class="fas fa-users"></i>
+          <h4>Customer First</h4>
+          <p>Your health and satisfaction is our top priority</p>
+        </div>
+        <div class="value-item">
+          <i class="fas fa-indian-rupee-sign"></i>
+          <h4>Affordable Premium</h4>
+          <p>International quality at Indian prices</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Stan Nutrition</h3>
+        <p>Premium wellness supplements for a healthier, stronger you.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="index.html#plans">Plans</a>
+        <a href="index.html#products">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-phone"></i> 1800 208 1789</p>
+        <p><i class="fas fa-envelope"></i> hello@stannutrition.com</p>
+        <p><i class="fas fa-globe"></i> stannutrition.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="text-align:center; padding-top:2rem; border-top:1px solid #333;">
+      <p>© 2025 Stan Nutrition. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy - Stan Nutrition</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://thumbs.dreamstime.com/b/nature-healthy-people-nutrition-logo-design-vector-icon-illustration-eco-life-concept-symbol-environment-medicine-relax-plant-169645154.jpg">
+
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #059669;
+      --dark: #111827;
+      --light: #f9fafb;
+      --gray: #6b7280;
+      --gray-light: #e5e7eb;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      line-height: 1.8;
+      background: var(--light);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navbar - Same as all pages */
+    header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0,0.1);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .logo span { color: var(--dark); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--primary); }
+
+    .nav-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .nav-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
+
+    /* Privacy Page Content */
+    .privacy-hero {
+      margin-top: 90px;
+      padding: 100px 0 60px;
+      background: linear-gradient(135deg, #ecfdf5 0%, #dcfce7 100%);
+      text-align: center;
+    }
+
+    .privacy-hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .last-updated {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-top: 1rem;
+    }
+
+    .privacy-content {
+      padding: 80px 0 120px;
+    }
+
+    .privacy-section {
+      margin-bottom: 3rem;
+    }
+
+    .privacy-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .privacy-section h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 30px;
+      background: var(--primary);
+      border-radius: 10px;
+    }
+
+    .privacy-section p,
+    .privacy-section li {
+      font-size: 1.05rem;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .privacy-section ul {
+      padding-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .privacy-section ul li {
+      margin-bottom: 0.8rem;
+      position: relative;
+    }
+
+    .privacy-section ul li::marker {
+      color: var(--primary);
+    }
+
+    .highlight {
+      background: #f0fdf4;
+      padding: 1.5rem;
+      border-left: 5px solid var(--primary);
+      border-radius: 0 10px 10px 0;
+      margin: 2rem 0;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 80px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h3 { margin-bottom: 1.5rem; color: var(--primary); }
+
+    .footer-col a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.8rem;
+      transition: 0.3s;
+    }
+
+    .footer-col a:hover { color: var(--primary); }
+
+    .social-links a {
+      font-size: 1.8rem;
+      margin-right: 1rem;
+      color: #ccc;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover { color: var(--primary); }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+        transition: 0.4s;
+      }
+
+      .nav-links.active { left: 0; }
+
+      .privacy-hero h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">Stan<span>Nutrition</span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#plans">Plans</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-btn">Contact Us</button>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="privacy-hero">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p>We respect your privacy and are committed to protecting your personal data.</p>
+      <div class="last-updated">Last Updated: December 12, 2025</div>
+    </div>
+  </section>
+
+  <!-- Privacy Content -->
+  <section class="privacy-content">
+    <div class="container">
+      <div class="privacy-section">
+        <h2>1. Information We Collect</h2>
+        <p>We collect information you provide directly to us when you:</p>
+        <ul>
+          <li>Create an account or place an order</li>
+          <li>Subscribe to our newsletter</li>
+          <li>Contact us via form, email, WhatsApp or phone</li>
+          <li>Fill out surveys or participate in promotions</li>
+        </ul>
+        <p>This may include your name, email address, phone number, shipping address, and payment information, and any other details you choose to provide.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>2. How We Use Your Information</h2>
+        <p>We use your information to:</p>
+        <ul>
+          <li>Process and deliver your orders</li>
+          <li>Send you order updates and promotional offers (you can unsubscribe anytime)</li>
+          <li>Improve our website and customer experience</li>
+          <li>Respond to your queries and provide support</li>
+          <li>Comply with legal obligations</li>
+        </ul>
+      </div>
+
+      <div class="privacy-section">
+        <h2>3. Sharing Your Information</h2>
+        <p>We do <strong>not</strong> sell your personal data to third parties. We only share information with:</p>
+        <ul>
+          <li>Payment gateways (Razorpay, PayU, etc.)</li>
+          <li>Delivery partners (Delhivery, BlueDart, etc.)</li>
+          <li>Trusted service providers who assist us in operating our website</li>
+        </ul>
+      </div>
+
+      <div class="privacy-section">
+        <h2>4. Cookies & Tracking</h2>
+        <p>We use cookies to enhance your experience. You can disable cookies in your browser settings, but some features may not work properly.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>5. Data Security</h2>
+        <p>We use industry-standard encryption and security measures to protect your data. However, no method of transmission over the internet is 100% secure.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2>6. Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Access your personal data</li>
+          <li>Request correction or deletion</li>
+          <li>Opt-out of marketing communications</li>
+          <li>Withdraw consent at any time</li>
+        </ul>
+        <p>Contact us at <strong>support@stannutrition.com</strong> for any such request.</p>
+      </div>
+
+      <div class="highlight">
+        <strong>We never share your phone number or email with third-party marketers without your explicit consent.</strong>
+      </div>
+
+      <div class="privacy-section">
+        <h2>7. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us:</p>
+        <p><strong>Email:</strong> support@stannutrition.com<br>
+        <strong>Phone:</strong> 1800 208 1789<br>
+        <strong>Address:</strong> Stan Nutrition, Mathura, Uttar Pradesh, India</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Stan Nutrition</h3>
+        <p>Premium wellness supplements for a healthier, stronger you.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="index.html#plans">Plans</a>
+        <a href="index.html#products">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-phone"></i> 1800 208 1789</p>
+        <p><i class="fas fa-envelope"></i> support@stannutrition.com</p>
+        <p><i class="fas fa-globe"></i> stannutrition.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="text-align:center; padding-top:2rem; border-top:1px solid #333;">
+      <p>© 2025 Stan Nutrition. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.innerHTML = navLinks.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+  </script>
+</body>
+</html>
