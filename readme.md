@@ -27,7 +27,7 @@ Website: www.stannutrition.com
 ## Developer
 This website was developed by **Jiendra Kumar**.
 
-LinkedIn: [Jiendra Kumar on LinkedIn](https://www.linkedin.com/in/technicaljitendra) *(Update with actual profile URL if available)*
+LinkedIn: [Jiendra Kumar on LinkedIn](https://www.linkedin.com/in/technicaljitendra) 
 
 ## Installation / Setup (for local development)
 If this is a static site:
